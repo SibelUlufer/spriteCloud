@@ -1,37 +1,43 @@
 <?xml version="1.0"?>
 <testsuites>
-<testsuite name="Root Suite" timestamp="2024-05-23T12:48:00" tests="0" file="cypress/e2e/ui-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="UI tests" timestamp="2024-05-23T12:48:00" tests="1" time="10.577" failures="0">
+<testsuite name="Root Suite" timestamp="2024-05-23T15:09:04" tests="0" file="cypress/e2e/API/user-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="User API tests" timestamp="2024-05-23T15:09:04" tests="3" time="0.677" failures="0">
   
-  <testcase name="UI tests Should wait load time " time="6.580" classname="Should wait load time "></testcase>
+  <testcase name="User API tests Should create a user and check" time="0.331" classname="Should create a user and check"></testcase>
   
-</testsuite>
-
-<testsuite name="Root Suite" timestamp="2024-05-23T12:48:16" tests="0" file="cypress/e2e/API/pet-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="Pet API tests" timestamp="2024-05-23T12:48:16" tests="6" time="1.860" failures="0">
+  <testcase name="User API tests Should update user and check" time="0.142" classname="Should update user and check"></testcase>
   
-  <testcase name="Pet API tests Should create a pet and check" time="0.872" classname="Should create a pet and check"></testcase>
-  
-  <testcase name="Pet API tests Should update the pet and check" time="0.152" classname="Should update the pet and check"></testcase>
-  
-  <testcase name="Pet API tests Should not update the pet info with invalid petID" time="0.142" classname="Should not update the pet info with invalid petID"></testcase>
-  
-  <testcase name="Pet API tests Should not return pet info with invalid ID" time="0.141" classname="Should not return pet info with invalid ID"></testcase>
-  
-  <testcase name="Pet API tests Should purchase the pet and check" time="0.273" classname="Should purchase the pet and check"></testcase>
-  
-  <testcase name="Pet API tests Should delete the pet" time="0.153" classname="Should delete the pet"></testcase>
+  <testcase name="User API tests Should delete the user" time="0.144" classname="Should delete the user"></testcase>
   
 </testsuite>
 
-<testsuite name="Root Suite" timestamp="2024-05-23T12:48:22" tests="0" file="cypress/e2e/API/user-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="User API tests" timestamp="2024-05-23T12:48:22" tests="3" time="0.737" failures="0">
+<testsuite name="Root Suite" timestamp="2024-05-23T15:08:58" tests="0" file="cypress/e2e/API/pet-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="Pet API tests" timestamp="2024-05-23T15:08:58" tests="6" time="1.865" failures="0">
   
-  <testcase name="User API tests Should create a user and check" time="0.358" classname="Should create a user and check"></testcase>
+  <testcase name="Pet API tests Should create a pet and check" time="0.871" classname="Should create a pet and check"></testcase>
   
-  <testcase name="User API tests Should update user and check" time="0.152" classname="Should update user and check"></testcase>
+  <testcase name="Pet API tests Should update the pet and check" time="0.154" classname="Should update the pet and check"></testcase>
   
-  <testcase name="User API tests Should delete the user" time="0.147" classname="Should delete the user"></testcase>
+  <testcase name="Pet API tests Should not update the pet info with invalid petID" time="0.144" classname="Should not update the pet info with invalid petID"></testcase>
+  
+  <testcase name="Pet API tests Should not return pet info with invalid ID" time="0.149" classname="Should not return pet info with invalid ID"></testcase>
+  
+  <testcase name="Pet API tests Should purchase the pet and check" time="0.279" classname="Should purchase the pet and check"></testcase>
+  
+  <testcase name="Pet API tests Should delete the pet" time="0.157" classname="Should delete the pet"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-05-23T15:08:40" tests="0" file="cypress/e2e/ui-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="UI tests" timestamp="2024-05-23T15:08:40" tests="5" time="13.357" failures="0">
+  
+  <testcase name="UI tests Should login with valid credentials and logs out" time="1.835" classname="Should login with valid credentials and logs out"></testcase>
+  
+  <testcase name="UI tests Should not login with invalid password" time="1.075" classname="Should not login with invalid password"></testcase>
+  
+  <testcase name="UI tests Should wait load time " time="5.696" classname="Should wait load time "></testcase>
+  
+  <testcase name="UI tests Should scroll to the button" time="0.584" classname="Should scroll to the button"></testcase>
   
 </testsuite>
 
