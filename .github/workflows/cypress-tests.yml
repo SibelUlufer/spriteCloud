@@ -36,7 +36,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: mochawesome-report
-        path: mochawesome-report/mochawesome.html # Ensure this is the correct path
+        path: mochawesome-report
+
 
     - name: Archive Cypress results
       if: always() # Ensure this step runs even if previous steps fail
