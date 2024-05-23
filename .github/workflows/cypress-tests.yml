@@ -30,25 +30,15 @@ jobs:
       run: npm install
 
     - name: Run Cypress tests
-      run: npm run cy:e2e
-
-    - name: Deploy report page
-      uses: peaceiris/actions-gh-pages@v3
+      uses: cypress-io/github-action@v4
       with:
+        command:  npm run cy:e2e
+
+    - name: Uploading artifact
+      uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: cypress-execution-report
+        path: /mochawesome-report
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./mochawesome-report
-
-    - name: Archive Mochawesome report
-      if: always() # Ensure this step runs even if previous steps fail
-      uses: actions/upload-artifact@v4
-      with:
-        name: mochawesome-report
-        path: mochawesome-report
-
-
-    - name: Archive Cypress results
-      if: always() # Ensure this step runs even if previous steps fail
-      uses: actions/upload-artifact@v4
-      with:
-        name: cypress-results
-        path: cypress/results
+        publish_dir: ./mochawesome-html-report
