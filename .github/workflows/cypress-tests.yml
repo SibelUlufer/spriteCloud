@@ -33,7 +33,7 @@ jobs:
 
     - name: Archive results
       if: always() # This ensures the step runs even if previous steps fail
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: cypress-results
         path: cypress/results
