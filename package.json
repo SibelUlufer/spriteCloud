@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.10.0",
+    "cypress-plugin-api": "^2.11.1",
+    "junit-merge": "^2.0.0",
+    "mocha": "^10.4.0"
+  },
+  "devDependencies": {
+    "cypress-multi-reporters": "^1.6.4",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
+    "typescript": "^5.4.5"
+  },
+  "name": "spritecloud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "delete:reports": "rm  -r cypress/results/* || true",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\">mochawesome.json && npx marge mochawesome.json",
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml ",
+    "cypress:run": "npm run prereport && npx cypress run",
+    "cy:e2e": "npm run cypress:run && npm run junit:merge && npm run mochawesome:merge",
+    "cy:open": "npx cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

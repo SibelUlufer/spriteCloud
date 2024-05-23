@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="10.618" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-05-23T12:48:00" tests="0" file="cypress/e2e/ui-tests.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="UI tests" timestamp="2024-05-23T12:48:00" tests="1" time="10.577" failures="0">
+    <testcase name="UI tests Should wait load time " time="6.580" classname="Should wait load time ">
+    </testcase>
+  </testsuite>
+</testsuites>

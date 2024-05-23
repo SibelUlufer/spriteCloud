@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-23T12:48:22.848Z",
+    "end": "2024-05-23T12:48:23.635Z",
+    "duration": 787,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5bc79aa1-35af-4060-bec9-7899deb35054",
+      "title": "",
+      "fullFile": "cypress/e2e/API/user-api-tests.cy.ts",
+      "file": "cypress/e2e/API/user-api-tests.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fbd18ae0-2f25-4c61-9322-800b7a7eabe6",
+          "title": "User API tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should create a user and check",
+              "fullTitle": "User API tests Should create a user and check",
+              "timedOut": null,
+              "duration": 358,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//creates user\ncy.api({\n    method: 'POST',\n    url: `${Cypress.env(\"baseApiUrl\")}/user`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n}).then(() => {\n    //checks user\n    cy.api({\n        method: 'GET',\n        url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n    }).then((response) => {\n        expect(response.body.username).to.eq(user_name);\n        expect(response.body.id).to.eq(user_id);\n        expect(response.body.email).to.eq(email);\n    });\n});",
+              "err": {},
+              "uuid": "df421909-0afe-4055-a3e2-3277cd14934e",
+              "parentUUID": "fbd18ae0-2f25-4c61-9322-800b7a7eabe6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should update user and check",
+              "fullTitle": "User API tests Should update user and check",
+              "timedOut": null,
+              "duration": 152,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//updates user\ncy.api({\n    method: 'PUT',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n});",
+              "err": {},
+              "uuid": "1285bef0-f792-438d-871a-079994479573",
+              "parentUUID": "fbd18ae0-2f25-4c61-9322-800b7a7eabe6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should delete the user",
+              "fullTitle": "User API tests Should delete the user",
+              "timedOut": null,
+              "duration": 147,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.api({\n    method: 'DELETE',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.message).to.eq(user_name);\n});",
+              "err": {},
+              "uuid": "a2c125b7-6d5d-4925-ad5b-5e2d9134a822",
+              "parentUUID": "fbd18ae0-2f25-4c61-9322-800b7a7eabe6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "df421909-0afe-4055-a3e2-3277cd14934e",
+            "1285bef0-f792-438d-871a-079994479573",
+            "a2c125b7-6d5d-4925-ad5b-5e2d9134a822"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 657,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

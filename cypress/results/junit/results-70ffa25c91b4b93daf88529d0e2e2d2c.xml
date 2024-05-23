@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.923" tests="6" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-05-23T12:48:16" tests="0" file="cypress/e2e/API/pet-api-tests.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Pet API tests" timestamp="2024-05-23T12:48:16" tests="6" time="1.860" failures="0">
+    <testcase name="Pet API tests Should create a pet and check" time="0.872" classname="Should create a pet and check">
+    </testcase>
+    <testcase name="Pet API tests Should update the pet and check" time="0.152" classname="Should update the pet and check">
+    </testcase>
+    <testcase name="Pet API tests Should not update the pet info with invalid petID" time="0.142" classname="Should not update the pet info with invalid petID">
+    </testcase>
+    <testcase name="Pet API tests Should not return pet info with invalid ID" time="0.141" classname="Should not return pet info with invalid ID">
+    </testcase>
+    <testcase name="Pet API tests Should purchase the pet and check" time="0.273" classname="Should purchase the pet and check">
+    </testcase>
+    <testcase name="Pet API tests Should delete the pet" time="0.153" classname="Should delete the pet">
+    </testcase>
+  </testsuite>
+</testsuites>
