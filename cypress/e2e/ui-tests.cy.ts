@@ -32,7 +32,7 @@ describe('UI tests', () => {
     cy.get('#login').click()//login
     cy.get('#loginstatus').should('be.visible').and('contain',  'Invalid username/password')
   })
-  it.only('Should wait load time ', ()=>{
+  it('Should wait load time ', ()=>{
     cy.intercept(`${Cypress.env('baseUiUrl')}/loaddelay`).as('loader')
     cy.goTo('Load Delay')
     cy.wait('@loader')
