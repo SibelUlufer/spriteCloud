@@ -1,5 +1,5 @@
 /node_modules
-jenkins.war
 cypress/results
-/mochawesome-report/
-/mochawesome.json/
+mochawesome-report
+mochawesome.json
+screenshots

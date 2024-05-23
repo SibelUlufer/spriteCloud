@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
 
-describe('User API tests', ()=>{
+describe('User API tests', () => {
+  // Generate random data for user creation
   const user_id = faker.number.int(100)
   const first_name = faker.person.firstName()
   const last_name = faker.person.lastName()
@@ -10,9 +11,9 @@ describe('User API tests', ()=>{
   const random_no = faker.number.int(1000)
   const password = `pwd${random_no}`
 
-  it('Should create a user and check', ()=>{
+  it('Should create a user and check', () => {
     const phone_number = faker.string.numeric(11)
-    //creates user
+    //creates a user
     cy.api({
       method: 'POST',
       url: `${Cypress.env("baseApiUrl")}/user`,
@@ -29,21 +30,22 @@ describe('User API tests', ()=>{
     }).then((response) => {
       expect(response.status).to.equal(200);
       expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID
-    }).then(()=>{
-      //checks user
-        cy.api({
-          method:'GET',
-          url:  `${Cypress.env("baseApiUrl")}/user/${user_name}`
-        }).then((response)=>{
-          expect(response.body.username).to.eq(user_name)
-          expect(response.body.id).to.eq(user_id)
-          expect(response.body.email).to.eq(email)
-        })
+    }).then(() => {
+      //checks user details
+      cy.api({
+        method: 'GET',
+        url: `${Cypress.env("baseApiUrl")}/user/${user_name}`
+      }).then((response) => {
+        expect(response.body.username).to.eq(user_name)
+        expect(response.body.id).to.eq(user_id)
+        expect(response.body.email).to.eq(email)
+      })
     })
   })
-  it('Should update user and check', ()=>{
+
+  it('Should update user and check', () => {
     const phone_number = faker.string.numeric(11)
-    //updates user
+    //updates user phone_number
     cy.api({
       method: 'PUT',
       url: `${Cypress.env("baseApiUrl")}/user/${user_name}`,
@@ -57,18 +59,19 @@ describe('User API tests', ()=>{
         phone: phone_number,
         userStatus: 0
       }
-    }).then((response)=>{
+    }).then((response) => {
       expect(response.status).to.equal(200);
       expect(response.body.message).to.equal(String(user_id));// Verify the message contains the user ID
     })
   })
-  it('Should delete the user', ()=>{
+
+  it('Should delete the user', () => {
     cy.api({
       method: 'DELETE',
       url: `${Cypress.env("baseApiUrl")}/user/${user_name}`
-    }).then((response)=>{
+    }).then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body.message).to.eq(user_name)
     })
   })
-  })
+})
