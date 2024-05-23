@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2024-05-23T18:07:55.084Z",
-    "end": "2024-05-23T18:07:55.830Z",
-    "duration": 746,
+    "start": "2024-05-23T19:01:01.635Z",
+    "end": "2024-05-23T19:01:02.328Z",
+    "duration": 693,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b61eb309-ebe4-4656-9ad8-6c438c086623",
+      "uuid": "536b941d-1605-4526-9321-26c83085a8f6",
       "title": "",
       "fullFile": "cypress/e2e/API/user-api-tests.cy.ts",
       "file": "cypress/e2e/API/user-api-tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+          "uuid": "e5cb30fb-b475-4097-8300-2f14b4895299",
           "title": "User API tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should create a user and check",
               "fullTitle": "User API tests Should create a user and check",
               "timedOut": null,
-              "duration": 328,
+              "duration": 326,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//creates user\ncy.api({\n    method: 'POST',\n    url: `${Cypress.env(\"baseApiUrl\")}/user`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n}).then(() => {\n    //checks user\n    cy.api({\n        method: 'GET',\n        url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n    }).then((response) => {\n        expect(response.body.username).to.eq(user_name);\n        expect(response.body.id).to.eq(user_id);\n        expect(response.body.email).to.eq(email);\n    });\n});",
               "err": {},
-              "uuid": "160ea2a0-d355-465f-9d6b-56fa746a705f",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "ce824867-f02a-456f-accb-f1303ca3b0be",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should update user and check",
               "fullTitle": "User API tests Should update user and check",
               "timedOut": null,
-              "duration": 153,
+              "duration": 145,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//updates user\ncy.api({\n    method: 'PUT',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n});",
               "err": {},
-              "uuid": "c9c104aa-b233-4bf3-b659-2e0ed069f5aa",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "b863a32a-3d21-4ed4-a881-8b0478b0430a",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Should delete the user",
               "fullTitle": "User API tests Should delete the user",
               "timedOut": null,
-              "duration": 148,
+              "duration": 140,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "cy.api({\n    method: 'DELETE',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.message).to.eq(user_name);\n});",
               "err": {},
-              "uuid": "dc9bef47-7353-42fe-a86e-a014b0ba2050",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "899e3b48-a00a-488c-96fe-b565b43befe7",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "160ea2a0-d355-465f-9d6b-56fa746a705f",
-            "c9c104aa-b233-4bf3-b659-2e0ed069f5aa",
-            "dc9bef47-7353-42fe-a86e-a014b0ba2050"
+            "ce824867-f02a-456f-accb-f1303ca3b0be",
+            "b863a32a-3d21-4ed4-a881-8b0478b0430a",
+            "899e3b48-a00a-488c-96fe-b565b43befe7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 629,
+          "duration": 611,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2024-05-23T18:07:29.872Z",
-    "end": "2024-05-23T18:07:55.830Z",
-    "duration": 25958
+    "start": "2024-05-23T19:00:34.351Z",
+    "end": "2024-05-23T19:01:02.328Z",
+    "duration": 27977
   },
   "results": [
     {
-      "uuid": "f51e6770-ec97-44ee-804d-1dc60be79447",
+      "uuid": "fe00c6eb-32e6-4c13-9be3-b99460bc8e53",
       "title": "",
       "fullFile": "cypress/e2e/API/pet-api-tests.cy.ts",
       "file": "cypress/e2e/API/pet-api-tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "71e2877c-ef52-489f-af57-78d551aed795",
+          "uuid": "f0de289e-925a-4e68-a28d-3333882b1a85",
           "title": "Pet API tests",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should create a pet and check",
               "fullTitle": "Pet API tests Should create a pet and check",
               "timedOut": null,
-              "duration": 887,
+              "duration": 861,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "//creates a pet\ncy.api({\n    method: \"POST\",\n    url: `${Cypress.env(\"baseApiUrl\")}/pet`,\n    body: {\n        id: pet_id,\n        category: {\n            id: category_id,\n            name: category_name\n        },\n        name: pet_name,\n        photoUrls: [\n            random_text\n        ],\n        tags: [\n            {\n                id: random_no,\n                name: random_text\n            }\n        ],\n        status: status.Available\n    }\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.id).to.eq(pet_id);\n    //checks the pet\n    cy.api({ method: \"GET\",\n        url: `${Cypress.env(\"baseApiUrl\")}/pet/${pet_id}` }).then((response) => {\n        expect(response.status).to.eq(200);\n        expect(response.body.category.id).to.eq(category_id);\n        expect(response.body.name).to.eq(pet_name);\n        expect(response.body.tags[0].id).to.eq(random_no);\n        expect(response.body.status).to.eq(status.Available);\n    });\n});",
               "err": {},
-              "uuid": "c6f8cf16-64b5-4edf-acd2-cc3d0111eef3",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "f7252dc0-0244-43e5-88cc-3e831cff0780",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should update the pet and check",
               "fullTitle": "Pet API tests Should update the pet and check",
               "timedOut": null,
-              "duration": 145,
+              "duration": 155,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "// updates the pet\ncy.api({\n    method: 'PUT',\n    url: `${Cypress.env(\"baseApiUrl\")}/pet`,\n    body: {\n        id: pet_id,\n        category: {\n            id: category_id,\n            name: category_name\n        },\n        name: pet_name,\n        photoUrls: [\n            random_text\n        ],\n        tags: [\n            {\n                id: random_no,\n                name: random_text\n            }\n        ],\n        status: status.Pending\n    }\n}).then((response) => {\n    const new_pet_id = response.body.id;\n    Cypress.env('newPetID', new_pet_id);\n    expect(response.status).to.equal(200);\n    expect(response.body.status).to.eq(status.Pending);\n    expect(response.body.id).to.eq(pet_id);\n    expect(response.body.name).to.eq(pet_name);\n});",
               "err": {},
-              "uuid": "63a5a3b1-662c-4918-b28a-5d78e40e36ce",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "61ab400a-0b67-4179-841f-d86af5b40a88",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Should not update the pet info with invalid petID",
               "fullTitle": "Pet API tests Should not update the pet info with invalid petID",
               "timedOut": null,
-              "duration": 150,
+              "duration": 145,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.api({\n    method: 'PUT',\n    url: `${Cypress.env(\"baseApiUrl\")}/pet`,\n    failOnStatusCode: false,\n    body: {\n        id: random_text,\n        category: {\n            id: category_id,\n            name: category_name\n        },\n        name: pet_name,\n        photoUrls: [\n            random_text\n        ],\n        tags: [\n            {\n                id: random_no,\n                name: random_text\n            }\n        ],\n        status: status.Pending\n    }\n}).then((response) => {\n    expect(response.status).to.equal(500);\n    expect(response.body.message).to.eq(\"something bad happened\");\n});",
               "err": {},
-              "uuid": "98d96e15-699a-42fb-8146-db4d67e18e70",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "6e14fa2a-586d-4481-b24b-0371e7bb3938",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Should not return pet info with invalid ID",
               "fullTitle": "Pet API tests Should not return pet info with invalid ID",
               "timedOut": null,
-              "duration": 141,
+              "duration": 139,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "cy.api({ method: \"GET\",\n    url: `${Cypress.env(\"baseApiUrl\")}/pet/${random_no}`,\n    failOnStatusCode: false }).then((response) => {\n    expect(response.status).to.equal(404);\n    expect(response.body.message).to.eq(\"Pet not found\");\n});",
               "err": {},
-              "uuid": "3151f077-a0ac-43d7-97ac-d6237010a842",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "be45aa35-bf8f-4dbd-82b3-560ea9027a21",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             },
@@ -110,7 +110,7 @@
               "title": "Should purchase the pet and check",
               "fullTitle": "Pet API tests Should purchase the pet and check",
               "timedOut": null,
-              "duration": 277,
+              "duration": 264,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -119,8 +119,8 @@
               "context": null,
               "code": "//orders the pet\ncy.api({\n    method: \"POST\",\n    url: `${Cypress.env(\"baseApiUrl\")}/store/order`,\n    body: {\n        id: random_no,\n        petId: Cypress.env('newPetID'),\n        quantity: 1,\n        shipDate: \"2024-05-23T11:27:13.175Z\",\n        status: status.Placed,\n        complete: true\n    }\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.id).to.eq(random_no);\n    expect(response.body.petId).to.eq(pet_id);\n    const order_id = response.body.id;\n    Cypress.env('orderID', order_id);\n    // checks the pet\n    cy.api({\n        method: \"GET\",\n        url: `${Cypress.env(\"baseApiUrl\")}/store/order/${order_id}`\n    }).then((response) => {\n        expect(response.status).to.eq(200);\n        expect(response.body.status).to.eq(status.Placed);\n        expect(response.body.complete).to.eq(true);\n        expect(response.body.petId).to.eq(pet_id);\n    });\n});",
               "err": {},
-              "uuid": "f6299488-e836-4c90-bae3-db77eb86e439",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "b34530f8-b98c-4451-8d80-391190d7bd8a",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             },
@@ -128,7 +128,7 @@
               "title": "Should delete the pet",
               "fullTitle": "Pet API tests Should delete the pet",
               "timedOut": null,
-              "duration": 146,
+              "duration": 136,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -137,25 +137,25 @@
               "context": null,
               "code": "cy.api({\n    method: 'DELETE',\n    url: `${Cypress.env(\"baseApiUrl\")}/pet/${pet_id}`\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.message).to.eq(String(pet_id));\n});",
               "err": {},
-              "uuid": "a3b64add-1dcb-4658-882e-2a16a939ffc0",
-              "parentUUID": "71e2877c-ef52-489f-af57-78d551aed795",
+              "uuid": "9ec36c34-3c4d-461f-97e8-be3356c3b112",
+              "parentUUID": "f0de289e-925a-4e68-a28d-3333882b1a85",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c6f8cf16-64b5-4edf-acd2-cc3d0111eef3",
-            "63a5a3b1-662c-4918-b28a-5d78e40e36ce",
-            "98d96e15-699a-42fb-8146-db4d67e18e70",
-            "3151f077-a0ac-43d7-97ac-d6237010a842",
-            "f6299488-e836-4c90-bae3-db77eb86e439",
-            "a3b64add-1dcb-4658-882e-2a16a939ffc0"
+            "f7252dc0-0244-43e5-88cc-3e831cff0780",
+            "61ab400a-0b67-4179-841f-d86af5b40a88",
+            "6e14fa2a-586d-4481-b24b-0371e7bb3938",
+            "be45aa35-bf8f-4dbd-82b3-560ea9027a21",
+            "b34530f8-b98c-4451-8d80-391190d7bd8a",
+            "9ec36c34-3c4d-461f-97e8-be3356c3b112"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1746,
+          "duration": 1700,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -171,7 +171,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "b61eb309-ebe4-4656-9ad8-6c438c086623",
+      "uuid": "536b941d-1605-4526-9321-26c83085a8f6",
       "title": "",
       "fullFile": "cypress/e2e/API/user-api-tests.cy.ts",
       "file": "cypress/e2e/API/user-api-tests.cy.ts",
@@ -180,7 +180,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+          "uuid": "e5cb30fb-b475-4097-8300-2f14b4895299",
           "title": "User API tests",
           "fullFile": "",
           "file": "",
@@ -191,7 +191,7 @@
               "title": "Should create a user and check",
               "fullTitle": "User API tests Should create a user and check",
               "timedOut": null,
-              "duration": 328,
+              "duration": 326,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -200,8 +200,8 @@
               "context": null,
               "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//creates user\ncy.api({\n    method: 'POST',\n    url: `${Cypress.env(\"baseApiUrl\")}/user`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n}).then(() => {\n    //checks user\n    cy.api({\n        method: 'GET',\n        url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n    }).then((response) => {\n        expect(response.body.username).to.eq(user_name);\n        expect(response.body.id).to.eq(user_id);\n        expect(response.body.email).to.eq(email);\n    });\n});",
               "err": {},
-              "uuid": "160ea2a0-d355-465f-9d6b-56fa746a705f",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "ce824867-f02a-456f-accb-f1303ca3b0be",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             },
@@ -209,7 +209,7 @@
               "title": "Should update user and check",
               "fullTitle": "User API tests Should update user and check",
               "timedOut": null,
-              "duration": 153,
+              "duration": 145,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -218,8 +218,8 @@
               "context": null,
               "code": "const phone_number = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.string.numeric(11);\n//updates user\ncy.api({\n    method: 'PUT',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`,\n    body: {\n        id: user_id,\n        username: user_name,\n        firstName: first_name,\n        lastName: last_name,\n        email: email,\n        password: password,\n        phone: phone_number,\n        userStatus: 0\n    }\n}).then((response) => {\n    expect(response.status).to.equal(200);\n    expect(response.body.message).to.equal(String(user_id)); // Verify the message contains the user ID\n});",
               "err": {},
-              "uuid": "c9c104aa-b233-4bf3-b659-2e0ed069f5aa",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "b863a32a-3d21-4ed4-a881-8b0478b0430a",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             },
@@ -227,7 +227,7 @@
               "title": "Should delete the user",
               "fullTitle": "User API tests Should delete the user",
               "timedOut": null,
-              "duration": 148,
+              "duration": 140,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -236,22 +236,22 @@
               "context": null,
               "code": "cy.api({\n    method: 'DELETE',\n    url: `${Cypress.env(\"baseApiUrl\")}/user/${user_name}`\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body.message).to.eq(user_name);\n});",
               "err": {},
-              "uuid": "dc9bef47-7353-42fe-a86e-a014b0ba2050",
-              "parentUUID": "a71d80dd-d8dc-440a-bc01-7865fe13df0c",
+              "uuid": "899e3b48-a00a-488c-96fe-b565b43befe7",
+              "parentUUID": "e5cb30fb-b475-4097-8300-2f14b4895299",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "160ea2a0-d355-465f-9d6b-56fa746a705f",
-            "c9c104aa-b233-4bf3-b659-2e0ed069f5aa",
-            "dc9bef47-7353-42fe-a86e-a014b0ba2050"
+            "ce824867-f02a-456f-accb-f1303ca3b0be",
+            "b863a32a-3d21-4ed4-a881-8b0478b0430a",
+            "899e3b48-a00a-488c-96fe-b565b43befe7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 629,
+          "duration": 611,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -267,7 +267,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9a78d359-f79d-4822-9636-02296a18ddd9",
+      "uuid": "6fa3409c-2dc5-4a18-9fd2-8d9f3d703c53",
       "title": "",
       "fullFile": "cypress/e2e/ui-tests.cy.ts",
       "file": "cypress/e2e/ui-tests.cy.ts",
@@ -276,7 +276,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "420208a2-410f-4370-8254-ebd45ffa127c",
+          "uuid": "3221f1bf-511b-428e-917f-9950d6b1dad9",
           "title": "UI tests",
           "fullFile": "",
           "file": "",
@@ -296,8 +296,8 @@
               "context": null,
               "code": "cy.get('h3').each(($el, index) => {\n    cy.clickAndCheckPageTitle(index);\n});\ncy.log('All h3 elements have been clicked.');",
               "err": {},
-              "uuid": "79dba95d-a558-4b18-8063-84f449fe92ac",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "6514ace7-29e4-4778-8ecf-809a2a66fbb6",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -305,7 +305,7 @@
               "title": "Should login with valid credentials and logs out",
               "fullTitle": "UI tests Should login with valid credentials and logs out",
               "timedOut": null,
-              "duration": 1741,
+              "duration": 3294,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -314,8 +314,8 @@
               "context": null,
               "code": "cy.goTo('Sample App');\nconst name = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.word.noun(5);\ncy.get('[name=\"UserName\"]').type(name);\ncy.get('[name=\"Password\"]').type('pwd');\ncy.get('#login').click(); //login\ncy.get('#loginstatus').should('be.visible').and('contain', `Welcome, ${name}!`);\ncy.get('#login').click(); //logout\ncy.get('#loginstatus').should('be.visible').and('contain', 'User logged out.');",
               "err": {},
-              "uuid": "d32e3161-6539-4d33-8f5e-f4d34bb1abfa",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "2440b465-451e-4e75-9533-c48af4495126",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -323,7 +323,7 @@
               "title": "Should not login with invalid password",
               "fullTitle": "UI tests Should not login with invalid password",
               "timedOut": null,
-              "duration": 1076,
+              "duration": 1065,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -332,8 +332,8 @@
               "context": null,
               "code": "cy.goTo('Sample App');\nconst name = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.word.noun(5);\ncy.get('[name=\"UserName\"]').type(name);\ncy.get('[name=\"Password\"]').type('234');\ncy.get('#login').click(); //login\ncy.get('#loginstatus').should('be.visible').and('contain', 'Invalid username/password');",
               "err": {},
-              "uuid": "1ba99899-3d61-46ef-a4b7-f960e45013b9",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "dc199312-888d-4b2a-b902-82b0af8220cc",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -341,7 +341,7 @@
               "title": "Should wait load time ",
               "fullTitle": "UI tests Should wait load time ",
               "timedOut": null,
-              "duration": 5711,
+              "duration": 5708,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -350,8 +350,8 @@
               "context": null,
               "code": "cy.intercept(`${Cypress.env('baseUiUrl')}/loaddelay`).as('loader');\ncy.goTo('Load Delay');\ncy.wait('@loader');\ncy.contains('.btn-primary', 'Button Appearing After Delay').should('be.visible');",
               "err": {},
-              "uuid": "857deeea-ee11-4a5a-84d2-0f56f8f7e373",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "fb84a9ef-87d2-47c6-a129-7d95be797058",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -359,7 +359,7 @@
               "title": "Should scroll to the button",
               "fullTitle": "UI tests Should scroll to the button",
               "timedOut": null,
-              "duration": 578,
+              "duration": 762,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -368,25 +368,25 @@
               "context": null,
               "code": "cy.visit(`${Cypress.env('baseUiUrl')}/scrollbars`);\ncy.get('#hidingButton').scrollIntoView().should('be.visible');",
               "err": {},
-              "uuid": "9e637cf4-3c09-419b-97eb-b3e4456f87ed",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "5c9c09fc-f7fb-4ec0-bc62-a56974d6fea8",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d32e3161-6539-4d33-8f5e-f4d34bb1abfa",
-            "1ba99899-3d61-46ef-a4b7-f960e45013b9",
-            "857deeea-ee11-4a5a-84d2-0f56f8f7e373",
-            "9e637cf4-3c09-419b-97eb-b3e4456f87ed"
+            "2440b465-451e-4e75-9533-c48af4495126",
+            "dc199312-888d-4b2a-b902-82b0af8220cc",
+            "fb84a9ef-87d2-47c6-a129-7d95be797058",
+            "5c9c09fc-f7fb-4ec0-bc62-a56974d6fea8"
           ],
           "failures": [],
           "pending": [
-            "79dba95d-a558-4b18-8063-84f449fe92ac"
+            "6514ace7-29e4-4778-8ecf-809a2a66fbb6"
           ],
           "skipped": [],
-          "duration": 9106,
+          "duration": 10829,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

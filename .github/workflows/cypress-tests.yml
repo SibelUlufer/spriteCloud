@@ -38,5 +38,5 @@ jobs:
       uses: actions/upload-artifact@v2
       if: always()
       with:
-        name: cypress-execution-report
+        name: mochawesome-report
         path: mochawesome-report

@@ -1,43 +1,43 @@
 <?xml version="1.0"?>
 <testsuites>
-<testsuite name="Root Suite" timestamp="2024-05-23T18:07:48" tests="0" file="cypress/e2e/API/pet-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="Pet API tests" timestamp="2024-05-23T18:07:48" tests="6" time="1.880" failures="0">
+<testsuite name="Root Suite" timestamp="2024-05-23T19:00:34" tests="0" file="cypress/e2e/ui-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="UI tests" timestamp="2024-05-23T19:00:34" tests="5" time="14.953" failures="0">
   
-  <testcase name="Pet API tests Should create a pet and check" time="0.887" classname="Should create a pet and check"></testcase>
+  <testcase name="UI tests Should login with valid credentials and logs out" time="3.294" classname="Should login with valid credentials and logs out"></testcase>
   
-  <testcase name="Pet API tests Should update the pet and check" time="0.145" classname="Should update the pet and check"></testcase>
+  <testcase name="UI tests Should not login with invalid password" time="1.065" classname="Should not login with invalid password"></testcase>
   
-  <testcase name="Pet API tests Should not update the pet info with invalid petID" time="0.150" classname="Should not update the pet info with invalid petID"></testcase>
+  <testcase name="UI tests Should wait load time " time="5.708" classname="Should wait load time "></testcase>
   
-  <testcase name="Pet API tests Should not return pet info with invalid ID" time="0.141" classname="Should not return pet info with invalid ID"></testcase>
-  
-  <testcase name="Pet API tests Should purchase the pet and check" time="0.277" classname="Should purchase the pet and check"></testcase>
-  
-  <testcase name="Pet API tests Should delete the pet" time="0.146" classname="Should delete the pet"></testcase>
+  <testcase name="UI tests Should scroll to the button" time="0.762" classname="Should scroll to the button"></testcase>
   
 </testsuite>
 
-<testsuite name="Root Suite" timestamp="2024-05-23T18:07:55" tests="0" file="cypress/e2e/API/user-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="User API tests" timestamp="2024-05-23T18:07:55" tests="3" time="0.699" failures="0">
+<testsuite name="Root Suite" timestamp="2024-05-23T19:00:54" tests="0" file="cypress/e2e/API/pet-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="Pet API tests" timestamp="2024-05-23T19:00:54" tests="6" time="1.820" failures="0">
   
-  <testcase name="User API tests Should create a user and check" time="0.328" classname="Should create a user and check"></testcase>
+  <testcase name="Pet API tests Should create a pet and check" time="0.861" classname="Should create a pet and check"></testcase>
   
-  <testcase name="User API tests Should update user and check" time="0.153" classname="Should update user and check"></testcase>
+  <testcase name="Pet API tests Should update the pet and check" time="0.155" classname="Should update the pet and check"></testcase>
   
-  <testcase name="User API tests Should delete the user" time="0.148" classname="Should delete the user"></testcase>
+  <testcase name="Pet API tests Should not update the pet info with invalid petID" time="0.145" classname="Should not update the pet info with invalid petID"></testcase>
+  
+  <testcase name="Pet API tests Should not return pet info with invalid ID" time="0.139" classname="Should not return pet info with invalid ID"></testcase>
+  
+  <testcase name="Pet API tests Should purchase the pet and check" time="0.264" classname="Should purchase the pet and check"></testcase>
+  
+  <testcase name="Pet API tests Should delete the pet" time="0.136" classname="Should delete the pet"></testcase>
   
 </testsuite>
 
-<testsuite name="Root Suite" timestamp="2024-05-23T18:07:29" tests="0" file="cypress/e2e/ui-tests.cy.ts" time="0.000" failures="0"></testsuite>
-<testsuite name="UI tests" timestamp="2024-05-23T18:07:29" tests="5" time="13.308" failures="0">
+<testsuite name="Root Suite" timestamp="2024-05-23T19:01:01" tests="0" file="cypress/e2e/API/user-api-tests.cy.ts" time="0.000" failures="0"></testsuite>
+<testsuite name="User API tests" timestamp="2024-05-23T19:01:01" tests="3" time="0.652" failures="0">
   
-  <testcase name="UI tests Should login with valid credentials and logs out" time="1.741" classname="Should login with valid credentials and logs out"></testcase>
+  <testcase name="User API tests Should create a user and check" time="0.326" classname="Should create a user and check"></testcase>
   
-  <testcase name="UI tests Should not login with invalid password" time="1.076" classname="Should not login with invalid password"></testcase>
+  <testcase name="User API tests Should update user and check" time="0.145" classname="Should update user and check"></testcase>
   
-  <testcase name="UI tests Should wait load time " time="5.711" classname="Should wait load time "></testcase>
-  
-  <testcase name="UI tests Should scroll to the button" time="0.578" classname="Should scroll to the button"></testcase>
+  <testcase name="User API tests Should delete the user" time="0.140" classname="Should delete the user"></testcase>
   
 </testsuite>
 

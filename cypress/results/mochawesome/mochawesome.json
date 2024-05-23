@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 1,
     "failures": -1,
-    "start": "2024-05-23T18:07:29.872Z",
-    "end": "2024-05-23T18:07:43.218Z",
-    "duration": 13346,
+    "start": "2024-05-23T19:00:34.351Z",
+    "end": "2024-05-23T19:00:49.374Z",
+    "duration": 15023,
     "testsRegistered": 5,
     "passPercent": 100,
     "pendingPercent": 20,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9a78d359-f79d-4822-9636-02296a18ddd9",
+      "uuid": "6fa3409c-2dc5-4a18-9fd2-8d9f3d703c53",
       "title": "",
       "fullFile": "cypress/e2e/ui-tests.cy.ts",
       "file": "cypress/e2e/ui-tests.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "420208a2-410f-4370-8254-ebd45ffa127c",
+          "uuid": "3221f1bf-511b-428e-917f-9950d6b1dad9",
           "title": "UI tests",
           "fullFile": "",
           "file": "",
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.get('h3').each(($el, index) => {\n    cy.clickAndCheckPageTitle(index);\n});\ncy.log('All h3 elements have been clicked.');",
               "err": {},
-              "uuid": "79dba95d-a558-4b18-8063-84f449fe92ac",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "6514ace7-29e4-4778-8ecf-809a2a66fbb6",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should login with valid credentials and logs out",
               "fullTitle": "UI tests Should login with valid credentials and logs out",
               "timedOut": null,
-              "duration": 1741,
+              "duration": 3294,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.goTo('Sample App');\nconst name = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.word.noun(5);\ncy.get('[name=\"UserName\"]').type(name);\ncy.get('[name=\"Password\"]').type('pwd');\ncy.get('#login').click(); //login\ncy.get('#loginstatus').should('be.visible').and('contain', `Welcome, ${name}!`);\ncy.get('#login').click(); //logout\ncy.get('#loginstatus').should('be.visible').and('contain', 'User logged out.');",
               "err": {},
-              "uuid": "d32e3161-6539-4d33-8f5e-f4d34bb1abfa",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "2440b465-451e-4e75-9533-c48af4495126",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Should not login with invalid password",
               "fullTitle": "UI tests Should not login with invalid password",
               "timedOut": null,
-              "duration": 1076,
+              "duration": 1065,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.goTo('Sample App');\nconst name = _faker_js_faker__WEBPACK_IMPORTED_MODULE_0__.faker.word.noun(5);\ncy.get('[name=\"UserName\"]').type(name);\ncy.get('[name=\"Password\"]').type('234');\ncy.get('#login').click(); //login\ncy.get('#loginstatus').should('be.visible').and('contain', 'Invalid username/password');",
               "err": {},
-              "uuid": "1ba99899-3d61-46ef-a4b7-f960e45013b9",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "dc199312-888d-4b2a-b902-82b0af8220cc",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "Should wait load time ",
               "fullTitle": "UI tests Should wait load time ",
               "timedOut": null,
-              "duration": 5711,
+              "duration": 5708,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "cy.intercept(`${Cypress.env('baseUiUrl')}/loaddelay`).as('loader');\ncy.goTo('Load Delay');\ncy.wait('@loader');\ncy.contains('.btn-primary', 'Button Appearing After Delay').should('be.visible');",
               "err": {},
-              "uuid": "857deeea-ee11-4a5a-84d2-0f56f8f7e373",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "fb84a9ef-87d2-47c6-a129-7d95be797058",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             },
@@ -110,7 +110,7 @@
               "title": "Should scroll to the button",
               "fullTitle": "UI tests Should scroll to the button",
               "timedOut": null,
-              "duration": 578,
+              "duration": 762,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -119,25 +119,25 @@
               "context": null,
               "code": "cy.visit(`${Cypress.env('baseUiUrl')}/scrollbars`);\ncy.get('#hidingButton').scrollIntoView().should('be.visible');",
               "err": {},
-              "uuid": "9e637cf4-3c09-419b-97eb-b3e4456f87ed",
-              "parentUUID": "420208a2-410f-4370-8254-ebd45ffa127c",
+              "uuid": "5c9c09fc-f7fb-4ec0-bc62-a56974d6fea8",
+              "parentUUID": "3221f1bf-511b-428e-917f-9950d6b1dad9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d32e3161-6539-4d33-8f5e-f4d34bb1abfa",
-            "1ba99899-3d61-46ef-a4b7-f960e45013b9",
-            "857deeea-ee11-4a5a-84d2-0f56f8f7e373",
-            "9e637cf4-3c09-419b-97eb-b3e4456f87ed"
+            "2440b465-451e-4e75-9533-c48af4495126",
+            "dc199312-888d-4b2a-b902-82b0af8220cc",
+            "fb84a9ef-87d2-47c6-a129-7d95be797058",
+            "5c9c09fc-f7fb-4ec0-bc62-a56974d6fea8"
           ],
           "failures": [],
           "pending": [
-            "79dba95d-a558-4b18-8063-84f449fe92ac"
+            "6514ace7-29e4-4778-8ecf-809a2a66fbb6"
           ],
           "skipped": [],
-          "duration": 9106,
+          "duration": 10829,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
